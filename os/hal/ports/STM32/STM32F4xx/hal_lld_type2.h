@@ -49,7 +49,7 @@
  * @name    Platform identification macros
  * @{
  */
-#if defined(STM32F413xx)
+#if defined(STM32F413xx) || defined(__DOXYGEN__)
 #define PLATFORM_NAME           "STM32F413 High Performance with DSP and FPU"
 
 #else
@@ -62,7 +62,7 @@
  * @{
  */
 
-#if defined(STM32F413xx) || defined(__DOXYGEN__)
+#if defined(STM32F413xx)
 /**
  * @brief   Absolute maximum system clock.
  */
@@ -149,6 +149,7 @@
 #define STM32_SPII2S_MAX        50000000
 #endif
 /** @} */
+
 
 /**
  * @name    Internal clock sources
@@ -508,7 +509,7 @@
 /**
  * @brief   PLLI2SM divider value.
  * @note    The allowed values are 2..63.
- * @note    The default value is calculated for a 96MHz I2S clock 
+ * @note    The default value is calculated for a 96MHz I2S clock
  *          output from an external 8MHz HSE clock.
  */
 #if !defined(STM32_PLLI2SM_VALUE) || defined(__DOXYGEN__)
@@ -519,7 +520,7 @@
  * @brief   PLLI2SN multiplier value.
  * @note    The allowed values are 192..432, except for
  *          STM32F446 where values are 50...432.
- * @note    The default value is calculated for a 96MHz I2S clock 
+ * @note    The default value is calculated for a 96MHz I2S clock
  *          output from an external 8MHz HSE clock.
  */
 #if !defined(STM32_PLLI2SN_VALUE) || defined(__DOXYGEN__)
@@ -529,7 +530,7 @@
 /**
  * @brief   PLLI2SR divider value.
  * @note    The allowed values are 2..7.
- * @note    The default value is calculated for a 96MHz I2S clock 
+ * @note    The default value is calculated for a 96MHz I2S clock
  *          output from an external 8MHz HSE clock.
  */
 #if !defined(STM32_PLLI2SR_VALUE) || defined(__DOXYGEN__)
@@ -657,7 +658,7 @@
  * @{
  */
 #if defined(STM32F413xx)
-#if (STM32_VDD >= 270) && (STM32_VDD <= 360)
+#if (STM32_VDD >= 270) && (STM32_VDD <= 360) || defined(__DOXYGEN__)
 #define STM32_0WS_THRESHOLD         25000000
 #define STM32_1WS_THRESHOLD         50000000
 #define STM32_2WS_THRESHOLD         75000000
